@@ -126,11 +126,11 @@ rsxplus/
 
 ### Original RSX Project
 
-This project is based on and inspired by the original **[RSX (reSource Xtractor)](https://github.com/r-ex/rsx)** created by the r-ex team. Their incredible work reverse-engineering Respawn's file formats made this project possible.
+This project is based on and inspired by the original **[RSX (reSource Xtractor)](https://github.com/r-ex/rsx)** created by r-ex.
 
 **Original RSX Contributors:**
-- [Rika](https://github.com/rikadesho) - Lead developer
-- [rexx](https://github.com/r-ex) - Core contributor
+- [rexx](https://github.com/r-ex)
+- [Rika](https://github.com/rikadesho)
 - And all other contributors to the original project
 
 ### RSXPlus
