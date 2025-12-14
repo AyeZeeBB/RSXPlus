@@ -1,0 +1,46 @@
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--statusbar-height);
+  padding: 0 var(--spacing-md);
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-primary);
+  font-size: 11px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.statusbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.statusbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.statusbar-progress {
+  width: 100px;
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.statusbar-progress-bar {
+  height: 100%;
+  background: var(--accent-primary);
+  transition: width var(--transition-fast);
+}
+
+.statusbar-message {
+  color: var(--text-muted);
+}
+
+.statusbar-item {
+  color: var(--text-muted);
+}

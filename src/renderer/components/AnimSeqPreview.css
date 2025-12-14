@@ -1,0 +1,241 @@
+.aseq-preview {
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.aseq-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--error);
+  border-radius: var(--radius-sm);
+  color: var(--error);
+}
+
+.aseq-error .error-icon {
+  font-size: 18px;
+}
+
+.aseq-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.aseq-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--asset-animation);
+}
+
+.aseq-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+
+.aseq-title h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.aseq-name {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.aseq-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aseq-section {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 12px;
+}
+
+.aseq-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.aseq-properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.aseq-property {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aseq-property.wide {
+  grid-column: 1 / -1;
+}
+
+.aseq-property .prop-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aseq-property .prop-value {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.aseq-property .prop-value.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.aseq-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.aseq-flag {
+  padding: 4px 8px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.aseq-refs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.aseq-ref {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.aseq-ref.found {
+  border-left: 3px solid var(--success);
+}
+
+.aseq-ref.missing {
+  border-left: 3px solid var(--text-muted);
+}
+
+.aseq-ref .ref-index {
+  min-width: 24px;
+  padding: 2px 6px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-radius: 3px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.aseq-ref .ref-name {
+  flex: 1;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aseq-ref .ref-guid {
+  flex: 1;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.aseq-ref .ref-type {
+  padding: 2px 6px;
+  background: var(--info);
+  color: white;
+  border-radius: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.aseq-truncated {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Timeline visualization for animation */
+.aseq-timeline {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.aseq-timeline-bar {
+  height: 8px;
+  background: var(--accent-primary);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.aseq-timeline-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255,255,255,0.1) 50%, 
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.aseq-timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 10px;
+  color: var(--text-secondary);
+}

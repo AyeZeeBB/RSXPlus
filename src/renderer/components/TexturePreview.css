@@ -1,0 +1,312 @@
+/* Enhanced Texture Preview */
+.texture-preview-enhanced {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* Toolbar */
+.texture-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.toolbar-group label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-right: 4px;
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--border-color);
+  margin: 0 var(--spacing-xs);
+}
+
+.texture-toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 var(--spacing-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.texture-toolbar button:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-color);
+}
+
+.texture-toolbar button.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.texture-toolbar button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.zoom-level {
+  min-width: 48px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.mip-selector {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 11px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.mip-selector:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.mip-selector option:disabled {
+  color: var(--text-muted);
+}
+
+/* Channel buttons */
+.channel-buttons button {
+  min-width: 32px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.channel-btn.channel-rgba { }
+.channel-btn.channel-rgb { }
+.channel-btn.channel-r.active { background: #e53935; border-color: #e53935; }
+.channel-btn.channel-g.active { background: #43a047; border-color: #43a047; }
+.channel-btn.channel-b.active { background: #1e88e5; border-color: #1e88e5; }
+.channel-btn.channel-a.active { background: #757575; border-color: #757575; }
+
+/* Normal map button */
+.nml-btn {
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 36px;
+}
+
+.nml-btn.active {
+  background: #ff9800;
+  border-color: #ff9800;
+}
+
+/* Background buttons */
+.background-buttons .bg-btn {
+  padding: 4px;
+}
+
+.background-buttons .bg-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Viewport */
+.texture-viewport {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+}
+
+.texture-bg-checkerboard {
+  background: repeating-conic-gradient(
+    var(--bg-tertiary) 0% 25%, 
+    var(--bg-secondary) 0% 50%
+  ) 50% / 20px 20px;
+}
+
+.texture-bg-black {
+  background: #000;
+}
+
+.texture-bg-white {
+  background: #fff;
+}
+
+.texture-bg-transparent {
+  background: transparent;
+}
+
+.texture-image {
+  max-width: none;
+  max-height: none;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.05s ease-out;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.texture-unavailable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.texture-unavailable svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
+}
+
+.texture-unavailable p {
+  font-size: 13px;
+}
+
+/* Info bar */
+.texture-info-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-color);
+  font-size: 11px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  gap: 4px;
+}
+
+.info-item strong {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Loading state */
+.texture-preview-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error state */
+.texture-preview-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-error, #f44336);
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.texture-preview-error svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.7;
+}
+
+.texture-preview-error p {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.error-details {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Loading overlay for starpak mips */
+.texture-loading-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+  text-align: center;
+  gap: var(--spacing-md);
+}
+
+.texture-loading-overlay .loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .texture-toolbar {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .toolbar-separator {
+    display: none;
+  }
+  
+  .toolbar-group {
+    margin-bottom: var(--spacing-xs);
+  }
+}

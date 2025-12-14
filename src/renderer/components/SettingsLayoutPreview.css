@@ -1,0 +1,253 @@
+.settings-layout-preview {
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--bg-primary);
+}
+
+.layout-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  color: #ef4444;
+}
+
+.layout-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  color: var(--text-muted);
+}
+
+/* Header */
+.layout-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 16px;
+}
+
+.layout-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border-radius: 10px;
+}
+
+.layout-icon svg {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.layout-title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.layout-name {
+  font-size: 12px;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+/* Content */
+.layout-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.layout-section {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.layout-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Properties */
+.layout-properties {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.layout-property {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 6px 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+.prop-label {
+  color: var(--text-muted);
+}
+
+.prop-value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.prop-value.mono {
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+/* Fields */
+.layout-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.layout-fields-placeholder {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 16px;
+  line-height: 1.5;
+}
+
+.layout-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.field-name {
+  flex: 1;
+  color: var(--text-primary);
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.field-type {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.field-type.type-0 { /* bool */
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+.field-type.type-1 { /* int */
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.field-type.type-2 { /* float */
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.field-type.type-3, /* float2 */
+.field-type.type-4 { /* float3 */
+  background: rgba(14, 165, 233, 0.2);
+  color: #0ea5e9;
+}
+
+.field-type.type-5 { /* string */
+  background: rgba(249, 115, 22, 0.2);
+  color: #f97316;
+}
+
+.field-type.type-6, /* asset */
+.field-type.type-7 { /* asset_noprecache */
+  background: rgba(236, 72, 153, 0.2);
+  color: #ec4899;
+}
+
+.field-type.type-8, /* array */
+.field-type.type-9 { /* array_dynamic */
+  background: rgba(156, 163, 175, 0.2);
+  color: #9ca3af;
+}
+
+.field-offset {
+  color: var(--text-muted);
+  font-size: 10px;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* Used By */
+.layout-used-by {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.used-by-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.used-by-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: rgba(100, 116, 139, 0.2);
+  color: #94a3b8;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.used-by-name {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.used-by-more {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.layout-no-usage {
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 8px;
+  text-align: center;
+}

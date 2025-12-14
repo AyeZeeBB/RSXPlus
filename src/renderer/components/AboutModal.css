@@ -1,0 +1,98 @@
+.about-modal {
+  width: 500px;
+}
+
+.about-content {
+  text-align: center;
+}
+
+.about-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  color: var(--accent-primary);
+}
+
+.about-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.about-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.about-version {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.about-features {
+  text-align: left;
+  background: var(--bg-tertiary);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-features h3 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-features ul {
+  list-style: none;
+  font-size: 13px;
+}
+
+.about-features li {
+  padding: var(--spacing-xs) 0;
+  color: var(--text-secondary);
+}
+
+.about-features li::before {
+  content: '•';
+  color: var(--accent-primary);
+  margin-right: var(--spacing-sm);
+}
+
+.about-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--accent-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color var(--transition-fast);
+}
+
+.about-links a:hover {
+  color: var(--accent-primary);
+}
+
+.about-license {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}

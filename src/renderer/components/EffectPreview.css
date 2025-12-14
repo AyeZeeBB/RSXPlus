@@ -1,0 +1,254 @@
+.efct-preview {
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.efct-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--error);
+  border-radius: var(--radius-sm);
+  color: var(--error);
+}
+
+.efct-error .error-icon {
+  font-size: 18px;
+}
+
+.efct-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.efct-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--warning);
+}
+
+.efct-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+
+.efct-title h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.efct-name {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.efct-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.efct-section {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 12px;
+}
+
+.efct-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.efct-properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.efct-property {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.efct-property .prop-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.efct-property .prop-value {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* Search */
+.efct-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.efct-search input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border-primary);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  outline: none;
+}
+
+.efct-search input:focus {
+  border-color: var(--accent-primary);
+}
+
+.efct-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.efct-search .search-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Effects List */
+.efct-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.efct-item {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.efct-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.efct-item-header:hover {
+  background: var(--bg-hover);
+}
+
+.efct-item.expanded .efct-item-header {
+  background: var(--bg-active);
+}
+
+.efct-expand {
+  font-size: 10px;
+  color: var(--text-secondary);
+  width: 12px;
+}
+
+.efct-filename {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.efct-count {
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  background: var(--bg-elevated);
+  border-radius: 10px;
+}
+
+/* Item Details */
+.efct-item-details {
+  padding: 12px;
+  padding-top: 0;
+  border-top: 1px solid var(--border-primary);
+}
+
+.efct-meta {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  padding-top: 8px;
+}
+
+/* Elements */
+.efct-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.elements-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.efct-element {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+}
+
+.elem-name {
+  font-size: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.elem-details {
+  display: flex;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.elem-particles {
+  color: var(--info);
+}
+
+.elem-material {
+  color: var(--success);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
