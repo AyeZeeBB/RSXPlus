@@ -1,50 +1,76 @@
-# RSX Electron
+# RSXPlus
 
-reSource Xtractor (RSX) - An asset extraction tool for games made with the Respawn Source Engine (Titanfall, Titanfall 2, Apex Legends).
+<p align="center">
+  <strong>A modern Electron-based asset viewer and extractor for Respawn Source Engine games</strong>
+</p>
 
-This is the Electron port of RSX, featuring a modern web-based UI built with React and TypeScript.
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#supported-games">Supported Games</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#development">Development</a> •
+  <a href="#credits">Credits</a>
+</p>
+
+---
+
+## About
+
+RSXPlus is a cross-platform desktop application for viewing and extracting assets from games built on the Respawn Source Engine. Built with Electron, React, and TypeScript, it provides a modern UI experience with real-time asset previews.
+
+This project is based on the original [RSX (reSource Xtractor)](https://github.com/r-ex/rsx) by the r-ex team. RSXPlus aims to bring the same powerful extraction capabilities to a more accessible, cross-platform format with enhanced previewing features.
 
 ## Features
 
-- 📦 **RPak Support** - Parse and extract assets from RPak files
-- 🎮 **Multiple Game Support** - Titanfall, Titanfall 2, Apex Legends
-- 🎨 **Modern UI** - Custom-built React interface with dark theme
-- 🔍 **Asset Preview** - 3D model preview with Three.js
-- 📁 **Batch Export** - Export multiple assets at once
-- ⚡ **Fast** - Optimized file parsing with Web Workers
+- 🎮 **Multi-Game Support** - Titanfall, Titanfall 2, and Apex Legends
+- 📦 **RPak Parsing** - Full support for Respawn's pak file format
+- 🖼️ **Real-Time Previews**
+  - 3D model viewer with orbit controls (Three.js)
+  - Texture viewer with mip levels, channels, and zoom
+  - Material viewer with PBR texture slots
+  - Audio playback (coming soon)
+- 📤 **Multiple Export Formats**
+  - Models: OBJ, SMD, Cast, RMAX
+  - Textures: PNG, DDS, TGA
+  - Materials: JSON with texture references
+- 🌐 **StarPak Streaming** - Load high-resolution textures from streaming paks
+- 🎨 **Modern Dark UI** - Clean, customizable interface
+- ⚡ **Fast & Efficient** - Optimized binary parsing
 
-## Supported Formats
+## Supported Games
 
-| Format | Extension | Description |
-|--------|-----------|-------------|
-| RPak | `.rpak` | Respawn Pak files |
-| StarPak | `.starpak` | Streaming data |
-| MBNK | `.mbnk` | Miles Audio Bank |
-| MDL | `.mdl` | Source Engine Models |
-| BSP | `.bsp` | Map files |
-| BPK | `.bpk` | Bluepoint Pak |
+| Game | Status |
+|------|--------|
+| Apex Legends | ✅ Full Support |
+| Titanfall 2 | ✅ Full Support |
+| Titanfall | ⚠️ Partial Support |
 
-## Asset Types
+## Supported Asset Types
 
-- **Models** (mdl_, arig, aseq, etc.)
-- **Textures** (txtr, uimg, etc.)
-- **Materials** (matl, msnp)
-- **Audio** (asrc, aevt)
-- **Shaders** (shdr, shds)
-- **UI** (ui, rtk, etc.)
-- **Data** (dtbl, stgs, rson, etc.)
-- **Maps** (rmap, llyr)
+| Category | Types |
+|----------|-------|
+| **Models** | mdl_, arig, aseq |
+| **Textures** | txtr, uimg |
+| **Materials** | matl, msnp |
+| **Audio** | asrc, aevt |
+| **Shaders** | shdr, shds |
+| **UI** | ui, rtk |
+| **Data** | dtbl, stgs, rson |
+| **Maps** | rmap, llyr |
 
-## Development
+## Installation
 
-### Prerequisites
+### Pre-built Releases
 
-- Node.js 18+
-- npm or yarn
+Download the latest release from the [Releases](../../releases) page.
 
-### Setup
+### Building from Source
 
 ```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/rsxplus.git
+cd rsxplus
+
 # Install dependencies
 npm install
 
@@ -54,54 +80,75 @@ npm run dev
 # Build for production
 npm run build
 
-# Package for distribution
-npm run package
+# Start the application
+npm start
 ```
+
+## Development
+
+### Prerequisites
+
+- Node.js 18+
+- npm
 
 ### Project Structure
 
 ```
-rsx_electron/
+rsxplus/
 ├── src/
 │   ├── main/           # Electron main process
-│   │   ├── main.ts     # Main entry point
-│   │   └── preload.ts  # Preload script for IPC
-│   ├── renderer/       # React frontend
-│   │   ├── components/ # UI components
-│   │   ├── stores/     # State management
-│   │   ├── parsers/    # File format parsers
-│   │   ├── types/      # TypeScript types
-│   │   ├── utils/      # Utility functions
-│   │   └── styles/     # CSS styles
-│   └── shared/         # Shared code
+│   │   ├── main.ts     # Entry point, IPC handlers
+│   │   ├── preload.ts  # Context bridge for renderer
+│   │   └── oodleDecompress.ts  # Native Oodle integration
+│   └── renderer/       # React frontend
+│       ├── components/ # UI components (previews, panels)
+│       ├── parsers/    # Binary file parsers
+│       ├── stores/     # Zustand state management
+│       ├── services/   # Export services
+│       ├── utils/      # Helper utilities
+│       └── styles/     # CSS styles
+├── dist/               # Build output
 ├── package.json
 ├── tsconfig.json
-├── tsconfig.main.json
 └── vite.config.ts
 ```
 
-## Architecture
+### Key Technologies
 
-### Main Process
-Handles file system operations, native dialogs, and window management through Electron's Node.js environment.
+- **Electron** - Cross-platform desktop framework
+- **React** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool
+- **Three.js** - 3D rendering
+- **Zustand** - State management
 
-### Renderer Process
-React-based UI that runs in a Chromium-based web environment. Communicates with the main process via IPC.
+## Credits
 
-### File Parsing
-Binary file parsing is done in the renderer using TypeScript implementations based on the original C++ codebase.
+### Original RSX Project
 
-### 3D Preview
-Uses Three.js for rendering 3D model previews with orbit controls.
+This project is based on and inspired by the original **[RSX (reSource Xtractor)](https://github.com/r-ex/rsx)** created by the r-ex team. Their incredible work reverse-engineering Respawn's file formats made this project possible.
 
-## Contributing
+**Original RSX Contributors:**
+- [Rika](https://github.com/rikadesho) - Lead developer
+- [rexx](https://github.com/r-ex) - Core contributor
+- And all other contributors to the original project
 
-Contributions are welcome! Please read the original RSX repository's guidelines for more information.
+### RSXPlus
+
+- Built with ❤️ using modern web technologies
 
 ## License
 
-AGPL-3.0 - See [LICENSE](LICENSE) for details.
+This project is licensed under **AGPL-3.0** - see the [LICENSE](LICENSE) file for details.
+
+This is in accordance with the original RSX project's license.
 
 ---
 
-**Disclaimer:** By using this software, you acknowledge that the software is provided "as is", without any representations, warranties, conditions, or liabilities, to the extent permitted by law.
+<p align="center">
+  <sub>
+    <strong>Disclaimer:</strong> This software is provided "as is", without warranty of any kind. 
+    This tool is intended for legitimate purposes such as modding, research, and personal use.
+    Please respect game developers and their intellectual property.
+  </sub>
+</p>
