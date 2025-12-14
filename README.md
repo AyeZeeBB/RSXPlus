@@ -22,28 +22,28 @@ This project is based on the original [RSX (reSource Xtractor)](https://github.c
 
 ## Features
 
-- 🎮 **Multi-Game Support** - Titanfall, Titanfall 2, and Apex Legends
-- 📦 **RPak Parsing** - Full support for Respawn's pak file format
-- 🖼️ **Real-Time Previews**
+- **Multi-Game Support** - Titanfall, Titanfall 2, and Apex Legends
+- **RPak Parsing** - Full support for Respawn's pak file format
+- **Real-Time Previews**
   - 3D model viewer with orbit controls (Three.js)
   - Texture viewer with mip levels, channels, and zoom
   - Material viewer with PBR texture slots
   - Audio playback (coming soon)
-- 📤 **Multiple Export Formats**
+- **Multiple Export Formats**
   - Models: OBJ, SMD, Cast, RMAX
   - Textures: PNG, DDS, TGA
   - Materials: JSON with texture references
-- 🌐 **StarPak Streaming** - Load high-resolution textures from streaming paks
-- 🎨 **Modern Dark UI** - Clean, customizable interface
-- ⚡ **Fast & Efficient** - Optimized binary parsing
+- **StarPak Streaming** - Load high-resolution textures from streaming paks
+- **Modern Dark UI** - Clean, customizable interface
+- **Fast & Efficient** - Optimized binary parsing
 
 ## Supported Games
 
 | Game | Status |
 |------|--------|
-| Apex Legends | ✅ Full Support |
-| Titanfall 2 | ✅ Full Support |
-| Titanfall | ⚠️ Partial Support |
+| Apex Legends | Full Support |
+| Titanfall 2 | Full Support |
+| Titanfall | Partial Support |
 
 ## Supported Asset Types
 
