@@ -18,7 +18,7 @@
 
 RSXPlus is a cross-platform desktop application for viewing and extracting assets from games built on the Respawn Source Engine. Built with Electron, React, and TypeScript, it provides a modern UI experience with real-time asset previews.
 
-This project is based on the original [RSX (reSource Xtractor)](https://github.com/r-ex/rsx) by the r-ex team. RSXPlus aims to bring the same powerful extraction capabilities to a more accessible, cross-platform format with enhanced previewing features.
+This project is based on the original [RSX (reSource Xtractor)](https://github.com/r-ex/rsx) by r-ex.
 
 ## Features
 
